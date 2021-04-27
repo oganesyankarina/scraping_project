@@ -4,7 +4,7 @@ from scrapy.settings import Settings
 from jobparser import settings
 from jobparser.spiders.hhru import HhruSpider
 # TODO
-# from jobparser.spiders.sjru import SjruSpider
+from jobparser.spiders.SjruSpider import SjruspiderSpider
 
 
 if __name__ == "__main__":
@@ -13,7 +13,6 @@ if __name__ == "__main__":
 
     process = CrawlerProcess(settings=crawler_settings)
     process.crawl(HhruSpider)
-    # чтобы запустить параллельно отправляйте классы пауков в .crawl
-    # process.crawl(SjruSpider)
+    process.crawl(SjruspiderSpider)
 
     process.start()
